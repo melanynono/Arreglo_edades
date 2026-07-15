@@ -54,5 +54,24 @@ function dibujarTablas() {
         `;
     }
 }
+function eliminarIzquierda(indice) {
+    edadesIzquierda.splice(indice, 1);
+    dibujarTablas();
+}
 
-dibujarTablas();
+function eliminarDerecha(indice) {
+    edadesDerecha.splice(indice, 1);
+    dibujarTablas();
+}
+
+function moverDerecha(indice) {
+    edadesDerecha.push(edadesIzquierda[indice]);
+    edadesIzquierda.splice(indice, 1);
+    dibujarTablas();
+}
+
+function moverIzquierda(indice) {
+    edadesIzquierda.push(edadesDerecha[indice]);
+    edadesDerecha.splice(indice, 1);
+    dibujarTablas();
+}
